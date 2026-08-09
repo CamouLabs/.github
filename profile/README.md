@@ -9,7 +9,8 @@
 </h3>
 
 <p align="center">
-  <strong>Experimenting with emerging technology for impact.</strong>
+  <strong>Experimenting with emerging technology for impact.</strong><br />
+  We explore what is new, then ship the parts that help people live a little better.
 </p>
 
 <p align="center">
