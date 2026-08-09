@@ -9,8 +9,7 @@
 </h3>
 
 <p align="center">
-  <strong>Apps that make everyday life easier.</strong><br />
-  Clear answers, quieter notes, short workouts, and a little more independence.
+  <strong>Experimenting with emerging technology for impact.</strong>
 </p>
 
 <p align="center">
