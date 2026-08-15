@@ -28,6 +28,7 @@
 
 <p align="center">
   <a href="https://camoulabs.github.io">Website</a> ·
+  <a href="https://camoulabs.github.io/blog/">Blog</a> ·
   <a href="https://www.linkedin.com/company/camoulabs/">LinkedIn</a> ·
   <a href="https://apps.apple.com/us/developer/shryas-bhurat/id1883531179">App Store</a>
 </p>
