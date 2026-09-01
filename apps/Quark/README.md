@@ -95,7 +95,12 @@ Reviewed 25: accepted 4, repaired 6, rejected 15
   On syllabus                caught 7
   One right answer           caught 4
   No spoilers                caught 3
-  ...
+  Safety                     caught 2
+  Readable                   caught 2
+  Arithmetic re-checked      caught 2
+  Not a repeat               caught 1
+  Shape                      caught 1
+  Grounded in the lesson     caught 1
 Every guardrail caught what it was supposed to catch.
 ```
 
