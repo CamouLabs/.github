@@ -1,0 +1,1102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Quark - Learn STEM | Camou Labs</title>
+<meta name="description" content="Quark: playful STEM practice, five minutes at a time. Six tracks, on-device Apple Intelligence coaching, eleven guardrails, and nothing that leaves your iPhone." />
+<link rel="icon" href="quark.png" type="image/png" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --indigo: #4141b8;
+    --indigo-deep: #33338f;
+    --violet: #5b5bd6;
+    --violet-soft: #7070e0;
+    --ice: #d5d5f2;
+    --bg: #f2f1fa;
+    --bg-white: #f9f8fd;
+    --ink: #1f1e33;
+    --muted: #5c5972;
+    --faint: #918da8;
+    --line: rgba(65, 65, 184, 0.12);
+    --accent: #5b5bd6;
+    --accent-soft: #7070e0;
+    --spark: #e9982a;
+    --on-accent: #f9f8fd;
+    --max: 1040px;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html {
+    scroll-behavior: smooth;
+    scroll-snap-type: y proximity;
+  }
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: "Plus Jakarta Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    line-height: 1.5;
+    overflow-x: clip;
+  }
+
+  .scroll-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 2px;
+    width: 0;
+    z-index: 60;
+    background: linear-gradient(90deg, var(--indigo), var(--violet));
+    transform-origin: left center;
+    pointer-events: none;
+  }
+  a { color: inherit; text-decoration: none; }
+  img { display: block; max-width: 100%; }
+  .wrap {
+    width: min(100% - 2.4rem, var(--max));
+    margin-inline: auto;
+  }
+  @media (min-width: 800px) {
+    .wrap { width: min(100% - 4.5rem, var(--max)); }
+  }
+
+  /* Nav */
+  .nav {
+    position: sticky;
+    top: 0;
+    z-index: 40;
+    background: rgba(242, 241, 250, 0.8);
+    backdrop-filter: saturate(180%) blur(18px);
+    -webkit-backdrop-filter: saturate(180%) blur(18px);
+    border-bottom: 1px solid transparent;
+    transition: border-color .25s ease;
+  }
+  .nav.scrolled { border-bottom-color: var(--line); }
+  .nav-inner {
+    min-height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+  .brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.55rem;
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+  }
+  .brand img {
+    width: 24px;
+    height: 24px;
+    border-radius: 6px;
+  }
+  .nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 0.45rem;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+  }
+  .nav-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 30px;
+    padding: 0.3rem 0.7rem;
+    border-radius: 980px;
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: -0.01em;
+    border: 1px solid transparent;
+    transition: background .2s ease, color .2s ease, border-color .2s ease;
+  }
+  .nav-btn-secondary {
+    color: var(--indigo);
+    background: rgba(91, 91, 214, 0.08);
+    border-color: rgba(91, 91, 214, 0.18);
+  }
+  .nav-btn-secondary:hover {
+    background: rgba(91, 91, 214, 0.14);
+    border-color: rgba(91, 91, 214, 0.28);
+  }
+  .nav-btn-primary {
+    color: var(--on-accent);
+    background: var(--accent);
+  }
+  .nav-btn-primary:hover { background: var(--accent-soft); }
+
+  /* Panels */
+  .hero,
+  .section,
+  .product {
+    position: relative;
+    min-height: 100svh;
+    min-height: 100dvh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    scroll-snap-align: start;
+    padding: max(5.5rem, calc(56px + 2.5rem)) 0 3.5rem;
+  }
+
+  /* Hero */
+  .hero {
+    overflow: hidden;
+    text-align: center;
+  }
+  .hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 75% 50% at 50% 0%, rgba(91, 91, 214, 0.16) 0%, transparent 58%),
+      radial-gradient(ellipse 40% 35% at 85% 80%, rgba(233, 152, 42, 0.09) 0%, transparent 55%),
+      linear-gradient(180deg, #f9f8fd 0%, #f2f1fa 60%, #ecebf7 100%);
+    pointer-events: none;
+  }
+  .hero-inner { position: relative; z-index: 1; width: 100%; }
+  .hero-icon {
+    width: 84px;
+    height: 84px;
+    border-radius: 21px;
+    margin: 0 auto 1.4rem;
+    box-shadow: 0 18px 40px rgba(65, 65, 184, 0.24);
+    animation: rise .9s cubic-bezier(.16,1,.3,1) both;
+  }
+  .hero h1 {
+    max-width: 22ch;
+    margin: 0 auto;
+    font-size: clamp(1.85rem, 4.6vw, 3.4rem);
+    font-weight: 600;
+    letter-spacing: -0.045em;
+    line-height: 1.08;
+    text-wrap: balance;
+    animation: rise .9s cubic-bezier(.16,1,.3,1) .06s both;
+  }
+  .hero p {
+    max-width: 34rem;
+    margin: 1rem auto 0;
+    color: var(--muted);
+    font-size: clamp(1rem, 1.5vw, 1.14rem);
+    letter-spacing: -0.01em;
+    animation: rise .9s cubic-bezier(.16,1,.3,1) .12s both;
+  }
+  .hero-actions {
+    margin-top: 1.75rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.7rem 1rem;
+    animation: rise .9s cubic-bezier(.16,1,.3,1) .18s both;
+  }
+  .hero-stats {
+    margin-top: 2.4rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.6rem 2.6rem;
+    animation: rise .9s cubic-bezier(.16,1,.3,1) .26s both;
+  }
+  .hero-stats div { text-align: center; }
+  .hero-stats strong {
+    display: block;
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    font-weight: 600;
+    letter-spacing: -0.04em;
+    color: var(--indigo);
+  }
+  .hero-stats span {
+    font-size: 0.74rem;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--faint);
+  }
+  .scroll-cue {
+    position: absolute;
+    left: 50%;
+    bottom: 1.4rem;
+    z-index: 2;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.35rem;
+    transform: translateX(-50%);
+    color: var(--faint);
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    animation: rise .9s cubic-bezier(.16,1,.3,1) .35s both, cue-bob 2.2s ease-in-out 1.2s infinite;
+  }
+  .scroll-cue span {
+    width: 1px;
+    height: 28px;
+    background: linear-gradient(180deg, var(--violet), transparent);
+  }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.3rem;
+    min-height: 36px;
+    padding: 0.4rem 0.9rem;
+    border-radius: 980px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    letter-spacing: -0.01em;
+    border: 1px solid transparent;
+    transition: transform .2s ease, background .2s ease, color .2s ease, border-color .2s ease;
+  }
+  .btn-primary {
+    background: var(--accent);
+    color: var(--on-accent);
+  }
+  .btn-primary:hover {
+    background: var(--accent-soft);
+    transform: scale(1.02);
+  }
+  .btn-secondary {
+    background: rgba(91, 91, 214, 0.08);
+    color: var(--indigo);
+    border-color: rgba(91, 91, 214, 0.18);
+  }
+  .btn-secondary:hover {
+    background: rgba(91, 91, 214, 0.14);
+    border-color: rgba(91, 91, 214, 0.28);
+    transform: scale(1.02);
+  }
+
+  /* Shared section */
+  .section > .wrap,
+  .product > .wrap {
+    width: min(100% - 2.4rem, var(--max));
+    margin-inline: auto;
+  }
+  @media (min-width: 800px) {
+    .section > .wrap,
+    .product > .wrap { width: min(100% - 4.5rem, var(--max)); }
+  }
+  .section-head {
+    max-width: 38rem;
+    margin-bottom: clamp(1.75rem, 4vh, 2.5rem);
+  }
+  .section-head.center {
+    text-align: center;
+    margin-inline: auto;
+  }
+  .eyebrow {
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: var(--accent);
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    margin-bottom: 0.7rem;
+  }
+  .section-head h2 {
+    font-size: clamp(1.85rem, 3.6vw, 2.7rem);
+    font-weight: 600;
+    letter-spacing: -0.035em;
+    line-height: 1.12;
+  }
+  .lede {
+    margin-top: 0.8rem;
+    font-size: clamp(1.02rem, 1.5vw, 1.14rem);
+    color: var(--muted);
+    letter-spacing: -0.01em;
+    line-height: 1.5;
+  }
+
+  #loop { background: var(--bg-white); border-block: 1px solid var(--line); }
+
+  .loop-grid {
+    display: grid;
+    gap: 0.9rem;
+  }
+  @media (min-width: 760px) {
+    .loop-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; }
+  }
+  .loop-card {
+    padding: 1.35rem 1.25rem;
+    border: 1px solid var(--line);
+    border-radius: 20px;
+    background: var(--bg);
+  }
+  .loop-card .step {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 26px;
+    height: 26px;
+    border-radius: 8px;
+    background: rgba(91, 91, 214, 0.12);
+    color: var(--indigo);
+    font-size: 0.78rem;
+    font-weight: 600;
+    margin-bottom: 0.8rem;
+  }
+  .loop-card h3 {
+    font-size: 1.08rem;
+    font-weight: 600;
+    letter-spacing: -0.025em;
+    margin-bottom: 0.4rem;
+  }
+  .loop-card p {
+    color: var(--muted);
+    font-size: 0.92rem;
+    line-height: 1.5;
+    letter-spacing: -0.01em;
+  }
+
+  /* Tracks */
+  .track-grid { display: grid; gap: 0.9rem; }
+  @media (min-width: 700px) {
+    .track-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; }
+  }
+  .track-card {
+    display: grid;
+    gap: 0.75rem;
+    padding: 1.25rem 1.2rem;
+    border: 1px solid var(--line);
+    border-radius: 20px;
+    background: var(--bg-white);
+    transition: border-color .2s ease, box-shadow .2s ease, transform .2s ease;
+  }
+  .track-card:hover {
+    border-color: rgba(91, 91, 214, 0.28);
+    box-shadow: 0 14px 34px rgba(65, 65, 184, 0.08);
+    transform: translateY(-2px);
+  }
+  .track-dot {
+    width: 34px;
+    height: 34px;
+    border-radius: 11px;
+    display: grid;
+    place-items: center;
+    font-size: 1rem;
+  }
+  .track-card h3 {
+    font-size: 1.06rem;
+    font-weight: 600;
+    letter-spacing: -0.025em;
+  }
+  .track-card p {
+    color: var(--muted);
+    font-size: 0.9rem;
+    line-height: 1.45;
+  }
+  .track-card .meta {
+    font-size: 0.76rem;
+    font-weight: 500;
+    color: var(--faint);
+    letter-spacing: 0.01em;
+  }
+
+  /* Product panel */
+  .products { background: var(--bg-white); }
+  .product {
+    border-block: 1px solid var(--line);
+    background: var(--bg-white);
+  }
+  .product-inner {
+    display: grid;
+    gap: 1.75rem;
+    width: 100%;
+    align-items: center;
+  }
+  @media (min-width: 900px) {
+    .product-inner {
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: clamp(2.5rem, 5vw, 4.5rem);
+      min-height: min(70vh, 640px);
+    }
+  }
+  .product-kicker {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.7rem;
+    margin-bottom: 1rem;
+  }
+  .product-kicker img {
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    box-shadow: 0 6px 16px rgba(65, 65, 184, 0.18);
+  }
+  .product-kicker span {
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--accent);
+    letter-spacing: -0.01em;
+  }
+  .product-copy h3 {
+    font-size: clamp(1.7rem, 3.2vw, 2.45rem);
+    font-weight: 600;
+    letter-spacing: -0.035em;
+    line-height: 1.12;
+    max-width: 18ch;
+  }
+  .product-copy > p {
+    margin-top: 0.85rem;
+    max-width: 34rem;
+    color: var(--muted);
+    font-size: clamp(1.02rem, 1.45vw, 1.14rem);
+    line-height: 1.55;
+    letter-spacing: -0.01em;
+  }
+  .benefits {
+    list-style: none;
+    margin-top: 1.25rem;
+    display: grid;
+    gap: 0.55rem;
+  }
+  .benefits li {
+    position: relative;
+    padding-left: 1.15rem;
+    color: var(--ink);
+    font-size: 0.94rem;
+    font-weight: 500;
+    letter-spacing: -0.01em;
+  }
+  .benefits li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.55em;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--violet);
+  }
+  .product-actions { margin-top: 1.5rem; }
+  .product-visual {
+    position: relative;
+    min-height: clamp(280px, 42vh, 460px);
+    height: 100%;
+    border-radius: 28px;
+    background:
+      radial-gradient(ellipse 70% 60% at 30% 20%, rgba(213, 213, 242, 0.32) 0%, transparent 60%),
+      linear-gradient(145deg, #33338f 0%, #4141b8 42%, #6a6ae0 100%);
+    overflow: hidden;
+    box-shadow: 0 22px 50px rgba(65, 65, 184, 0.18);
+    display: grid;
+    place-items: center;
+    will-change: transform;
+  }
+  .product-visual .viz {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+  }
+  .product-visual .panel-logo {
+    position: relative;
+    z-index: 2;
+    width: clamp(120px, 26vw, 152px);
+    height: clamp(120px, 26vw, 152px);
+    border-radius: 34px;
+    object-fit: cover;
+    box-shadow: 0 22px 50px rgba(0, 0, 0, 0.28);
+  }
+  .viz .spin-slow { transform-origin: 160px 160px; animation: spin 22s linear infinite; }
+  .viz .spin-med { transform-origin: 160px 160px; animation: spin 13s linear infinite reverse; }
+  .viz .pulse { transform-origin: center; animation: pulse 2.4s ease-in-out infinite; }
+
+  /* Guardrails */
+  #guardrails { background: var(--bg); }
+  .rail-grid { display: grid; gap: 0.7rem; }
+  @media (min-width: 700px) {
+    .rail-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.8rem; }
+  }
+  .rail {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 0.85rem;
+    align-items: start;
+    padding: 0.95rem 1.05rem;
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    background: var(--bg-white);
+  }
+  .rail .check {
+    width: 20px;
+    height: 20px;
+    margin-top: 0.15rem;
+    border-radius: 50%;
+    background: rgba(18, 153, 107, 0.14);
+    display: grid;
+    place-items: center;
+  }
+  .rail .check svg { width: 11px; height: 11px; color: #12996b; }
+  .rail h4 {
+    font-size: 0.95rem;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    margin-bottom: 0.2rem;
+  }
+  .rail p {
+    color: var(--muted);
+    font-size: 0.86rem;
+    line-height: 1.45;
+  }
+  .ledger {
+    margin-top: 1.6rem;
+    padding: 1.15rem 1.25rem;
+    border: 1px solid var(--line);
+    border-radius: 18px;
+    background: var(--bg-white);
+    font-size: 0.86rem;
+    color: var(--muted);
+  }
+  .ledger code {
+    display: block;
+    margin-top: 0.7rem;
+    padding: 0.85rem 1rem;
+    border-radius: 12px;
+    background: #1f1e33;
+    color: #d5d5f2;
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+    font-size: 0.78rem;
+    line-height: 1.65;
+    white-space: pre;
+    overflow-x: auto;
+  }
+
+  /* Privacy */
+  #privacy { background: var(--bg-white); border-block: 1px solid var(--line); }
+  .promise-grid { display: grid; gap: 0.9rem; }
+  @media (min-width: 760px) {
+    .promise-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; }
+  }
+  .promise {
+    padding: 1.2rem 1.2rem;
+    border: 1px solid var(--line);
+    border-radius: 18px;
+    background: var(--bg);
+  }
+  .promise h4 {
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    margin-bottom: 0.35rem;
+  }
+  .promise p { color: var(--muted); font-size: 0.9rem; line-height: 1.5; }
+
+  /* Footer */
+  .footer {
+    padding: 2.75rem 0 2.4rem;
+    background: var(--bg);
+  }
+  .footer-grid { display: grid; gap: 1.75rem; }
+  @media (min-width: 760px) {
+    .footer-grid {
+      grid-template-columns: 1.3fr 1fr 1fr;
+      gap: 2rem;
+      align-items: start;
+    }
+  }
+  .footer .brand { margin-bottom: 0.55rem; }
+  .footer .brand img { width: 20px; height: 20px; }
+  .footer-blurb {
+    color: var(--faint);
+    font-size: 0.86rem;
+    max-width: 26ch;
+    line-height: 1.45;
+  }
+  .footer-col h4 {
+    font-size: 0.74rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--faint);
+    margin-bottom: 0.75rem;
+  }
+  .footer-col a {
+    display: block;
+    color: var(--muted);
+    font-size: 0.88rem;
+    margin-top: 0.45rem;
+    transition: color .2s ease;
+  }
+  .footer-col a:hover { color: var(--ink); }
+  .copyright {
+    margin-top: 2rem;
+    padding-top: 1.15rem;
+    border-top: 1px solid var(--line);
+    color: var(--faint);
+    font-size: 0.72rem;
+  }
+
+  /* Reveal */
+  .reveal {
+    opacity: 0;
+    transform: translateY(28px);
+    filter: blur(4px);
+    transition:
+      opacity .9s cubic-bezier(.16,1,.3,1),
+      transform .9s cubic-bezier(.16,1,.3,1),
+      filter .9s cubic-bezier(.16,1,.3,1);
+    transition-delay: var(--d, 0ms);
+  }
+  .reveal.from-left { transform: translateX(-36px) translateY(10px); }
+  .reveal.from-right { transform: translateX(36px) translateY(10px); }
+  .reveal.from-scale { transform: translateY(18px) scale(0.94); }
+  .reveal.in { opacity: 1; transform: none; filter: blur(0); }
+  .benefits li {
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity .55s cubic-bezier(.16,1,.3,1), transform .55s cubic-bezier(.16,1,.3,1);
+  }
+  .product-copy.reveal.in .benefits li { opacity: 1; transform: none; }
+  .product-copy.reveal.in .benefits li:nth-child(1) { transition-delay: .12s; }
+  .product-copy.reveal.in .benefits li:nth-child(2) { transition-delay: .2s; }
+  .product-copy.reveal.in .benefits li:nth-child(3) { transition-delay: .28s; }
+  .product-copy.reveal.in .benefits li:nth-child(4) { transition-delay: .36s; }
+  .track-card.reveal:nth-child(1), .loop-card.reveal:nth-child(1) { --d: 0ms; }
+  .track-card.reveal:nth-child(2), .loop-card.reveal:nth-child(2) { --d: 70ms; }
+  .track-card.reveal:nth-child(3), .loop-card.reveal:nth-child(3) { --d: 140ms; }
+  .track-card.reveal:nth-child(4) { --d: 210ms; }
+  .track-card.reveal:nth-child(5) { --d: 280ms; }
+  .track-card.reveal:nth-child(6) { --d: 350ms; }
+
+  @keyframes rise {
+    from { opacity: 0; transform: translateY(16px); }
+    to { opacity: 1; transform: none; }
+  }
+  @keyframes cue-bob {
+    0%, 100% { transform: translateX(-50%) translateY(0); }
+    50% { transform: translateX(-50%) translateY(6px); }
+  }
+  @keyframes spin { to { transform: rotate(360deg); } }
+  @keyframes pulse {
+    0%, 100% { opacity: .55; transform: scale(0.92); }
+    50% { opacity: 1; transform: scale(1.05); }
+  }
+
+  a:focus-visible, .btn:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; scroll-snap-type: none; }
+    .reveal, .benefits li { opacity: 1; transform: none; filter: none; transition: none; }
+    .hero-icon, .hero h1, .hero p, .hero-actions, .hero-stats, .scroll-cue { animation: none; }
+    .track-card:hover, .btn-primary:hover, .btn-secondary:hover { transform: none; }
+    .viz .spin-slow, .viz .spin-med, .viz .pulse { animation: none; }
+  }
+
+  @media (max-width: 820px) {
+    html { scroll-snap-type: none; }
+    .wrap, .section > .wrap, .product > .wrap { width: min(100% - 1.5rem, var(--max)); }
+    .nav-inner { min-height: 52px; gap: 0.65rem; }
+    .brand { font-size: 0.95rem; }
+    .brand img { width: 22px; height: 22px; }
+    .nav-actions { flex-wrap: nowrap; }
+    .nav-btn { min-height: 28px; font-size: 0.7rem; padding: 0.28rem 0.65rem; white-space: nowrap; }
+    .hero, .section, .product {
+      min-height: auto;
+      justify-content: flex-start;
+      scroll-snap-align: none;
+      padding: 4.25rem 0 2.75rem;
+    }
+    .hero {
+      min-height: 100svh;
+      min-height: 100dvh;
+      justify-content: center;
+      padding-top: 4.5rem;
+      padding-bottom: 3.25rem;
+    }
+    .hero h1 { max-width: 16ch; font-size: clamp(1.85rem, 8.2vw, 2.55rem); }
+    .hero-stats { margin-top: 1.9rem; gap: 1.2rem 1.9rem; }
+    .scroll-cue { display: none; }
+    .section-head { margin-bottom: 1.35rem; }
+    .section-head h2 { font-size: clamp(1.65rem, 6.5vw, 2.15rem); }
+    .lede { font-size: 0.98rem; }
+    .product { padding-block: 3.25rem; }
+    .product-copy h3 { max-width: none; font-size: clamp(1.55rem, 6.4vw, 2rem); }
+    .product-visual {
+      min-height: 200px;
+      aspect-ratio: 16 / 11;
+      height: auto;
+      border-radius: 22px;
+    }
+    .reveal { transform: translateY(18px); filter: none; }
+    .reveal.from-left, .reveal.from-right { transform: translateY(18px); }
+  }
+
+  /* The dropped links stay reachable from the hero buttons and the footer. */
+  @media (max-width: 620px) {
+    .nav-hide-sm { display: none; }
+  }
+
+  @media (max-width: 420px) {
+    .hero-actions { flex-direction: column; align-items: stretch; }
+    .hero-actions .btn { width: 100%; }
+  }
+</style>
+</head>
+<body>
+  <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+  <nav class="nav" id="nav">
+    <div class="wrap nav-inner">
+      <a class="brand" href="https://camoulabs.github.io" aria-label="Camou Labs home">
+        <img src="quark.png" alt="" width="24" height="24" />
+        <span>Quark</span>
+      </a>
+      <div class="nav-actions">
+        <a class="nav-btn nav-btn-secondary nav-hide-sm" href="#loop">How it works</a>
+        <a class="nav-btn nav-btn-secondary" href="#guardrails">Guardrails</a>
+        <a class="nav-btn nav-btn-secondary nav-hide-sm" href="#privacy">Privacy</a>
+        <a class="nav-btn nav-btn-primary" href="https://github.com/CamouLabs/.github/tree/main/apps/Quark">Source</a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="hero" id="top">
+    <div class="wrap hero-inner">
+      <img class="hero-icon" src="quark.png" alt="Quark" width="84" height="84" />
+      <h1>STEM, five minutes at a time.</h1>
+      <p>Six tracks, short sessions, and a path that sends you back to whatever is starting to fade. The coaching is written by Apple Intelligence on your iPhone — and checked by eleven guardrails before you ever read it.</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#loop">How it works</a>
+        <a class="btn btn-secondary" href="#guardrails">See the guardrails</a>
+      </div>
+      <div class="hero-stats">
+        <div><strong>6</strong><span>Tracks</span></div>
+        <div><strong>24</strong><span>Lessons</span></div>
+        <div><strong>120</strong><span>Questions</span></div>
+        <div><strong>11</strong><span>Guardrails</span></div>
+        <div><strong>0</strong><span>Network calls</span></div>
+      </div>
+    </div>
+    <a class="scroll-cue" href="#loop" aria-label="Scroll to how it works">
+      Scroll
+      <span aria-hidden="true"></span>
+    </a>
+  </header>
+
+  <section class="section" id="loop">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <p class="eyebrow">The loop</p>
+        <h2>Practise. Miss. Come back.</h2>
+        <p class="lede">Quark is built on three findings that hold up outside the lab, and it is honest about the third one: memory fades, so the path has to be allowed to take a lesson back.</p>
+      </div>
+      <div class="loop-grid">
+        <div class="loop-card reveal from-scale">
+          <span class="step">1</span>
+          <h3>Interleaved, not blocked</h3>
+          <p>Sessions ramp from warm-up to stretch, and question kinds are mixed rather than grouped. Mixing costs a little practice accuracy and buys a lot of retention.</p>
+        </div>
+        <div class="loop-card reveal from-scale">
+          <span class="step">2</span>
+          <h3>Answers are re-derived</h3>
+          <p>A small arithmetic parser re-computes every numeric answer instead of trusting it — for the built-in questions and for anything the model proposes.</p>
+        </div>
+        <div class="loop-card reveal from-scale">
+          <span class="step">3</span>
+          <h3>Mastery decays</h3>
+          <p>A forgetting half-life is fitted per lesson. When predicted recall drops below 70%, that lesson is due again — so a crown on the path is earned continuously, not once.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="tracks">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <p class="eyebrow">What you can learn</p>
+        <h2>Six tracks, all in the binary.</h2>
+        <p class="lede">Every lesson and question ships inside the app. There is no download and no CDN, so nothing about what you are studying is observable by anyone.</p>
+      </div>
+      <div class="track-grid">
+        <div class="track-card reveal from-scale">
+          <div class="track-dot" style="background: rgba(224, 138, 43, 0.14);" aria-hidden="true">➗</div>
+          <h3>Mathematics</h3>
+          <p>Numbers you can feel — fractions, percentages, and the slope of a line.</p>
+          <p class="meta">4 lessons · 20 questions</p>
+        </div>
+        <div class="track-card reveal from-scale">
+          <div class="track-dot" style="background: rgba(79, 99, 217, 0.14);" aria-hidden="true">🪐</div>
+          <h3>Physics</h3>
+          <p>Why things move — forces, motion, and where energy goes.</p>
+          <p class="meta">4 lessons · 20 questions</p>
+        </div>
+        <div class="track-card reveal from-scale">
+          <div class="track-dot" style="background: rgba(15, 156, 140, 0.14);" aria-hidden="true">⚗️</div>
+          <h3>Chemistry</h3>
+          <p>What stuff is made of — atoms, moles, and balancing an equation.</p>
+          <p class="meta">4 lessons · 20 questions</p>
+        </div>
+        <div class="track-card reveal from-scale">
+          <div class="track-dot" style="background: rgba(46, 158, 82, 0.14);" aria-hidden="true">🌱</div>
+          <h3>Biology</h3>
+          <p>How life works — cells, inheritance, and energy through an ecosystem.</p>
+          <p class="meta">4 lessons · 20 questions</p>
+        </div>
+        <div class="track-card reveal from-scale">
+          <div class="track-dot" style="background: rgba(122, 84, 240, 0.14);" aria-hidden="true">⌨️</div>
+          <h3>Computing</h3>
+          <p>Think like a machine — binary, algorithms, and what complexity costs.</p>
+          <p class="meta">4 lessons · 20 questions</p>
+        </div>
+        <div class="track-card reveal from-scale">
+          <div class="track-dot" style="background: rgba(213, 69, 95, 0.14);" aria-hidden="true">📊</div>
+          <h3>Data &amp; Stats</h3>
+          <p>Read the world's numbers — averages, spread, and misleading charts.</p>
+          <p class="meta">4 lessons · 20 questions</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="products">
+    <section class="product" id="intelligence">
+      <div class="wrap product-inner">
+        <div class="product-copy reveal from-left">
+          <div class="product-kicker">
+            <img src="quark.png" alt="" width="44" height="44" />
+            <span>Apple Intelligence, on device</span>
+          </div>
+          <h3>A coach that stays in its lane.</h3>
+          <p>Apple's on-device model writes the hints, the explanations, and the occasional bonus question. It is given the lesson's facts and nothing else — no internet, no other lessons, no room to improvise. Everything it produces is a draft until the guardrails have signed it off.</p>
+          <ul class="benefits">
+            <li>Hints point at the method, never the answer</li>
+            <li>Explanations respond to the answer you actually gave</li>
+            <li>Generated questions are always labelled as generated</li>
+            <li>With the model off, every lesson still has written coaching</li>
+          </ul>
+          <div class="product-actions">
+            <a class="btn btn-primary" href="#guardrails">How it is fenced</a>
+          </div>
+        </div>
+        <div class="product-visual reveal from-right" aria-hidden="true">
+          <img class="panel-logo" src="quark.png" alt="" width="152" height="152" />
+          <svg class="viz" viewBox="0 0 320 320" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+            <defs>
+              <radialGradient id="qg" cx="50%" cy="45%" r="60%">
+                <stop offset="0%" stop-color="#d5d5f2" stop-opacity=".35"/>
+                <stop offset="100%" stop-color="#33338f" stop-opacity="0"/>
+              </radialGradient>
+            </defs>
+            <circle cx="160" cy="160" r="118" fill="url(#qg)"/>
+            <g class="spin-slow" fill="none" stroke="#d5d5f2" stroke-opacity=".2" stroke-width="1.25">
+              <ellipse cx="160" cy="160" rx="112" ry="46" transform="rotate(-28 160 160)"/>
+              <ellipse cx="160" cy="160" rx="86" ry="34" transform="rotate(-28 160 160)"/>
+            </g>
+            <g class="spin-med" fill="none" stroke="#d5d5f2" stroke-opacity=".14" stroke-width="1.25">
+              <ellipse cx="160" cy="160" rx="112" ry="46" transform="rotate(36 160 160)"/>
+            </g>
+            <circle class="pulse" cx="160" cy="160" r="12" fill="#d5d5f2" fill-opacity=".45"/>
+            <circle cx="248" cy="118" r="7" fill="#ffc15e"/>
+          </svg>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <section class="section" id="guardrails">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <p class="eyebrow">Guardrails</p>
+        <h2>Eleven checks, all readable.</h2>
+        <p class="lede">Apple Intelligence has its own safety guardrails, and they run first. These are Quark's own: narrow, deterministic checks on anything the model writes. They are separate from the model, testable without it, and listed in the app in one line each.</p>
+      </div>
+      <div class="rail-grid">
+        <div class="rail reveal">
+          <span class="check" aria-hidden="true"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M1.5 6.4l3 3 6-7"/></svg></span>
+          <div><h4>Shape</h4><p>A generated question must have four distinct options and exactly one marked correct.</p></div>
+        </div>
+        <div class="rail reveal">
+          <span class="check" aria-hidden="true"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M1.5 6.4l3 3 6-7"/></svg></span>
+          <div><h4>Safety</h4><p>Anything violent, sexual, self-harm related, or otherwise unsuitable is dropped, not softened.</p></div>
+        </div>
+        <div class="rail reveal">
+          <span class="check" aria-hidden="true"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M1.5 6.4l3 3 6-7"/></svg></span>
+          <div><h4>No personal data</h4><p>Names, emails, phone numbers, and links are stripped; the coach never asks for personal details.</p></div>
+        </div>
+        <div class="rail reveal">
+          <span class="check" aria-hidden="true"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M1.5 6.4l3 3 6-7"/></svg></span>
+          <div><h4>On syllabus</h4><p>Generated material has to use the vocabulary of the lesson it claims to belong to.</p></div>
+        </div>
+        <div class="rail reveal">
+          <span class="check" aria-hidden="true"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M1.5 6.4l3 3 6-7"/></svg></span>
+          <div><h4>Arithmetic re-checked</h4><p>Numeric answers are re-derived from arithmetic before the question is shown.</p></div>
+        </div>
+        <div class="rail reveal">
+          <span class="check" aria-hidden="true"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M1.5 6.4l3 3 6-7"/></svg></span>
+          <div><h4>One right answer</h4><p>Duplicate options, "all of the above", and questions that contain their own answer are rejected.</p></div>
+        </div>
+        <div class="rail reveal">
+          <span class="check" aria-hidden="true"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M1.5 6.4l3 3 6-7"/></svg></span>
+          <div><h4>Readable</h4><p>Long sentences and jargon the lesson never introduced are rejected.</p></div>
+        </div>
+        <div class="rail reveal">
+          <span class="check" aria-hidden="true"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M1.5 6.4l3 3 6-7"/></svg></span>
+          <div><h4>Grounded in the lesson</h4><p>Every number in coach text must appear in the lesson or the question itself.</p></div>
+        </div>
+        <div class="rail reveal">
+          <span class="check" aria-hidden="true"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M1.5 6.4l3 3 6-7"/></svg></span>
+          <div><h4>Not a repeat</h4><p>A generated question that repeats one already asked is discarded.</p></div>
+        </div>
+        <div class="rail reveal">
+          <span class="check" aria-hidden="true"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M1.5 6.4l3 3 6-7"/></svg></span>
+          <div><h4>No spoilers</h4><p>A hint that contains the answer is rewritten once, then replaced with the built-in hint.</p></div>
+        </div>
+        <div class="rail reveal">
+          <span class="check" aria-hidden="true"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M1.5 6.4l3 3 6-7"/></svg></span>
+          <div><h4>Short enough</h4><p>Coach replies are capped so a hint stays a hint.</p></div>
+        </div>
+      </div>
+      <div class="ledger reveal">
+        <strong>"We have guardrails" is a claim, not a fact.</strong> So the app keeps a ledger per session and shows it on the summary screen, and the repository ships an adversarial harness that red-teams all eleven with a model that misbehaves on purpose — 36 scenarios, each naming the guardrail that is supposed to catch it.
+        <code>Reviewed 25: accepted 4, repaired 6, rejected 15
+  On syllabus                caught 7
+  One right answer           caught 4
+  No spoilers                caught 3
+  Safety                     caught 2
+  Readable                   caught 2
+  Arithmetic re-checked      caught 2
+  Not a repeat               caught 1
+  Shape                      caught 1
+  Grounded in the lesson     caught 1
+Every guardrail caught what it was supposed to catch.</code>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="privacy">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <p class="eyebrow">Privacy</p>
+        <h2>Nothing leaves the phone.</h2>
+        <p class="lede">Not as a setting, and not as a promise about how the data is handled once it arrives somewhere. Quark makes no outbound requests at all.</p>
+      </div>
+      <div class="promise-grid">
+        <div class="promise reveal">
+          <h4>On device, always</h4>
+          <p>Lessons, questions, hints, explanations, and grading all happen on your iPhone, through Apple's on-device model.</p>
+        </div>
+        <div class="promise reveal">
+          <h4>No network calls</h4>
+          <p>Quark makes none. It works in airplane mode, and there is no account to create.</p>
+        </div>
+        <div class="promise reveal">
+          <h4>One local file</h4>
+          <p>Your XP, streak, and per-lesson skill records live in a single JSON file in the app's own container.</p>
+        </div>
+        <div class="promise reveal">
+          <h4>Nothing to sell</h4>
+          <p>No analytics SDK, no advertising identifier, no crash reporter, no in-app purchases.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer" id="footer">
+    <div class="wrap reveal">
+      <div class="footer-grid">
+        <div>
+          <a class="brand" href="https://camoulabs.github.io">
+            <img src="quark.png" alt="" width="20" height="20" />
+            <span>Camou Labs</span>
+          </a>
+          <p class="footer-blurb">Emerging technology for impact.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Quark</h4>
+          <a href="#loop">How it works</a>
+          <a href="#tracks">Tracks</a>
+          <a href="#guardrails">Guardrails</a>
+          <a href="#privacy">Privacy</a>
+        </div>
+        <div class="footer-col">
+          <h4>Connect</h4>
+          <a href="https://camoulabs.github.io">Website</a>
+          <a href="https://camoulabs.github.io/blog/">Blog</a>
+          <a href="https://github.com/CamouLabs" target="_blank" rel="noopener noreferrer">GitHub</a>
+          <a href="https://apps.apple.com/us/developer/shryas-bhurat/id1883531179" target="_blank" rel="noopener noreferrer">App Store</a>
+        </div>
+      </div>
+      <p class="copyright">Copyright © 2026 Camou Labs. All rights reserved. San Francisco, California.</p>
+    </div>
+  </footer>
+
+  <script>
+    const nav = document.getElementById('nav');
+    const progress = document.getElementById('scrollProgress');
+    const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const panels = document.querySelectorAll('.hero, .section, .product');
+    const visuals = document.querySelectorAll('.product-visual');
+
+    const updateChrome = () => {
+      const max = document.documentElement.scrollHeight - window.innerHeight;
+      const ratio = max > 0 ? window.scrollY / max : 0;
+      progress.style.width = (ratio * 100).toFixed(2) + '%';
+      nav.classList.toggle('scrolled', window.scrollY > 8);
+    };
+
+    updateChrome();
+    window.addEventListener('scroll', updateChrome, { passive: true });
+    window.addEventListener('resize', updateChrome, { passive: true });
+
+    const items = document.querySelectorAll('.reveal');
+    if (reduce || !('IntersectionObserver' in window)) {
+      items.forEach(el => el.classList.add('in'));
+      panels.forEach(el => el.classList.add('in-view', 'panel-active'));
+    } else {
+      const revealIo = new IntersectionObserver((entries) => {
+        entries.forEach(e => {
+          if (e.isIntersecting) {
+            e.target.classList.add('in');
+            revealIo.unobserve(e.target);
+          }
+        });
+      }, { threshold: 0.18, rootMargin: '0px 0px -8% 0px' });
+      items.forEach(el => revealIo.observe(el));
+
+      const panelIo = new IntersectionObserver((entries) => {
+        entries.forEach(e => {
+          e.target.classList.toggle('in-view', e.isIntersecting);
+          e.target.classList.toggle('panel-active', e.isIntersecting && e.intersectionRatio > 0.45);
+        });
+      }, { threshold: [0.35, 0.55, 0.75] });
+      panels.forEach(el => panelIo.observe(el));
+
+      const canParallax = window.matchMedia('(min-width: 821px)').matches;
+      if (canParallax) {
+        let ticking = false;
+        const parallax = () => {
+          ticking = false;
+          const mid = window.innerHeight * 0.5;
+          visuals.forEach(el => {
+            if (!el.classList.contains('in')) return;
+            const rect = el.getBoundingClientRect();
+            if (rect.bottom < 0 || rect.top > window.innerHeight) return;
+            const offset = (rect.top + rect.height * 0.5 - mid) * -0.06;
+            el.style.transform = 'translate3d(0, ' + offset.toFixed(1) + 'px, 0)';
+          });
+        };
+        const onScrollParallax = () => {
+          if (!ticking) {
+            ticking = true;
+            requestAnimationFrame(parallax);
+          }
+        };
+        window.addEventListener('scroll', onScrollParallax, { passive: true });
+        parallax();
+      }
+    }
+  </script>
+</body>
+</html>

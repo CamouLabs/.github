@@ -1,0 +1,531 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 63;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		F026BAA99ABD40D05BF4EB05 /* BiologyCourse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C638FDE40C49F7C1BA9F98 /* BiologyCourse.swift */; };
+		93E19466EF0D8F3FC6D1245B /* ChemistryCourse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33B4C4D7966945848947C5A5 /* ChemistryCourse.swift */; };
+		E7767863FFA2ED7F66AE42B4 /* ComputingCourse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EA302FB0883AA108C217BC5 /* ComputingCourse.swift */; };
+		141A3FB2A2FE3B06EAB9F421 /* Curriculum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3EC5991BB8F7CC38F2E30C /* Curriculum.swift */; };
+		5916B2B7AD8E7136E0BDA597 /* DataCourse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 298ECA82B8AE9BAE6229DC8C /* DataCourse.swift */; };
+		051A7A8392BD387EFB18E690 /* MathCourse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C4F252395216E9F4A064F7B /* MathCourse.swift */; };
+		42D71C3DF0414B1470C2541B /* PhysicsCourse.swift in Sources */ = {isa = PBXBuildFile; fileRef = B03D1CA094123F32C187D2D6 /* PhysicsCourse.swift */; };
+		034A55AA0C5045B3447CB95A /* Course.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E388D536B2BEA64FAE63C0 /* Course.swift */; };
+		7671E392A2CB46A57405E0D7 /* Exercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87C4CA8D38AA40E67B070AF7 /* Exercise.swift */; };
+		A844E052DDE6427F2EAFD18A /* LearnerProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73EAB5AEFB074609CD7D3C41 /* LearnerProfile.swift */; };
+		D77DBCB77A62FF369C0F7255 /* Track.swift in Sources */ = {isa = PBXBuildFile; fileRef = 117C60DA697C06D187FD2D7D /* Track.swift */; };
+		EC9BF9184673F45C33DA2C53 /* QuarkApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D126EF71F0B59398CCFCE45 /* QuarkApp.swift */; };
+		84CDE48EB943F87DC4837D31 /* AppSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA4988768BA8C405C2B16BFD /* AppSettings.swift */; };
+		5022C3989962C7CC45F0B65E /* CoachService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB17DD257E5334ECA9DBC90D /* CoachService.swift */; };
+		FE73DCF39459A5DD7DF9740E /* Constitution.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEADCF6E52405FEB2F4DD232 /* Constitution.swift */; };
+		8FFED5CF0FCC9FAD4CC92D8B /* PracticeGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D25A512F686EDF1C8C37C19 /* PracticeGenerator.swift */; };
+		9CF65D26782966BB3C4DF581 /* QuarkPersona.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC9AA647B138B2975EBC0B87 /* QuarkPersona.swift */; };
+		4D152F6B925D48CDB030A322 /* AnswerLeakDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F3B8797F625235DA5C9FF90 /* AnswerLeakDetector.swift */; };
+		4A937517FE081897A66BAFFA /* CoachGuardrails.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDCF810CD28434FEA893DD6A /* CoachGuardrails.swift */; };
+		6ECAA42705AF0DBF950DA323 /* GroundingCheck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7112385111C0BE7BE4C70D5A /* GroundingCheck.swift */; };
+		3CAD1E262B52A2AB380A1C67 /* Guardrail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 417FF51EE3E98FFA47CD2051 /* Guardrail.swift */; };
+		48B245FB275C87FA21D76EC4 /* ItemGuardrails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C9D283827C5D438044AA5C2 /* ItemGuardrails.swift */; };
+		55BC84EBCC3617D2EE6D7DCC /* SafetyScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E1814ED15633F4BFD589B2 /* SafetyScreen.swift */; };
+		DD65F5FCA6835ECC1C71DF97 /* Haptics.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1274BC885D12F304EF43276 /* Haptics.swift */; };
+		AAB1541AA273EFB287B11931 /* LanguageReasoner.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9F9225261D33D353B59BFC3 /* LanguageReasoner.swift */; };
+		CC813A0F085FC30A958E9860 /* AnswerChecker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BE30929DAC7DB2524DE9C4A /* AnswerChecker.swift */; };
+		6152CF57181BC7938E89F702 /* MasteryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8E05296D26606F0BABF69FD /* MasteryModel.swift */; };
+		60532A19E295164646B0853B /* MathEvaluator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2FEC2E765BB07449A9F8E14 /* MathEvaluator.swift */; };
+		312C668FA858C846A5134C17 /* ProgressEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C88F78D0D6B49A5921175C4 /* ProgressEngine.swift */; };
+		B40EBA2A9200DC2274D6F0F4 /* SeededRandom.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACCC030BF3C698AFE08AEA1D /* SeededRandom.swift */; };
+		2C7B39A14E5C2BD1F901A332 /* SessionBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AE5D433CF63797822ECEAB8 /* SessionBuilder.swift */; };
+		38B6F66217311C92841F2105 /* SpacedRepetition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B113AD97A285F49B28434DE /* SpacedRepetition.swift */; };
+		8BD5AC75A303DF32ABF05336 /* ProgressStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACDB2177FDB2342139CA5076 /* ProgressStore.swift */; };
+		8861829D461FE84463F405D9 /* QuarkTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 098525B2C8EEFCC2DA3E5E44 /* QuarkTheme.swift */; };
+		EE56FD3907CB84D67DD93D77 /* SessionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5DFEE45683401E29F2E034C /* SessionViewModel.swift */; };
+		BF6661AC540AD827B9233B03 /* AnswerControls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EDD3B866C0C25DFD7EC21E2 /* AnswerControls.swift */; };
+		AA4156D976DD856B9B8E11F4 /* CoachSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE580C47A4ED80390A20F17A /* CoachSheet.swift */; };
+		27BFD9EFA25DE96820B2E2F5 /* Effects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09CA6D11ACD011F01071073C /* Effects.swift */; };
+		92AEA21EB3172C2F8AD3AFAC /* FeedbackBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D631C1D0D23377E558861B /* FeedbackBar.swift */; };
+		CA02620F45EE39CFD20B03BF /* LessonNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = D678BBA5054031DDE0E38A75 /* LessonNode.swift */; };
+		852692D4352BD3C465991192 /* QuarkControls.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4CA3724E076BA9B735C53DE /* QuarkControls.swift */; };
+		F954E89269E7375669033D4A /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9FBED8FC0195D1076F4A3D /* OnboardingView.swift */; };
+		D9966DF70355375CCD528328 /* PathView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2005BABF14E9BE5D4FB8A2D5 /* PathView.swift */; };
+		DB615F9D866C1E21D51D6DBD /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA2C1EB9ACEA13A6B5A34B0 /* ProfileView.swift */; };
+		FCDE762B2FA709BDE5DD7B78 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB6F9E5467B5F8E388A6BCA0 /* RootView.swift */; };
+		C5A9E8461A4FA85EC4947E12 /* SessionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9BAF45C3F7DBD2D7D6C25A7 /* SessionView.swift */; };
+		C0DBC712473C98BC6AFF0F85 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47EC072FE4C89C7FA41997F9 /* SettingsView.swift */; };
+		E9A310BC2F46E59EC71FE1EC /* SummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7FCD16BFAD1215F8DB34A70 /* SummaryView.swift */; };
+		D3B2F64B06C1554C6A6956AF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 24D66C2E4EAFB44A5315E98C /* Assets.xcassets */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		F0C638FDE40C49F7C1BA9F98 /* BiologyCourse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BiologyCourse.swift; sourceTree = "<group>"; };
+		33B4C4D7966945848947C5A5 /* ChemistryCourse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChemistryCourse.swift; sourceTree = "<group>"; };
+		0EA302FB0883AA108C217BC5 /* ComputingCourse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComputingCourse.swift; sourceTree = "<group>"; };
+		5B3EC5991BB8F7CC38F2E30C /* Curriculum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Curriculum.swift; sourceTree = "<group>"; };
+		298ECA82B8AE9BAE6229DC8C /* DataCourse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataCourse.swift; sourceTree = "<group>"; };
+		4C4F252395216E9F4A064F7B /* MathCourse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MathCourse.swift; sourceTree = "<group>"; };
+		B03D1CA094123F32C187D2D6 /* PhysicsCourse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhysicsCourse.swift; sourceTree = "<group>"; };
+		57E388D536B2BEA64FAE63C0 /* Course.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Course.swift; sourceTree = "<group>"; };
+		87C4CA8D38AA40E67B070AF7 /* Exercise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Exercise.swift; sourceTree = "<group>"; };
+		73EAB5AEFB074609CD7D3C41 /* LearnerProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnerProfile.swift; sourceTree = "<group>"; };
+		117C60DA697C06D187FD2D7D /* Track.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Track.swift; sourceTree = "<group>"; };
+		4D126EF71F0B59398CCFCE45 /* QuarkApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuarkApp.swift; sourceTree = "<group>"; };
+		DA4988768BA8C405C2B16BFD /* AppSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSettings.swift; sourceTree = "<group>"; };
+		FB17DD257E5334ECA9DBC90D /* CoachService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoachService.swift; sourceTree = "<group>"; };
+		EEADCF6E52405FEB2F4DD232 /* Constitution.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constitution.swift; sourceTree = "<group>"; };
+		9D25A512F686EDF1C8C37C19 /* PracticeGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PracticeGenerator.swift; sourceTree = "<group>"; };
+		FC9AA647B138B2975EBC0B87 /* QuarkPersona.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuarkPersona.swift; sourceTree = "<group>"; };
+		2F3B8797F625235DA5C9FF90 /* AnswerLeakDetector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerLeakDetector.swift; sourceTree = "<group>"; };
+		DDCF810CD28434FEA893DD6A /* CoachGuardrails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoachGuardrails.swift; sourceTree = "<group>"; };
+		7112385111C0BE7BE4C70D5A /* GroundingCheck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroundingCheck.swift; sourceTree = "<group>"; };
+		417FF51EE3E98FFA47CD2051 /* Guardrail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Guardrail.swift; sourceTree = "<group>"; };
+		0C9D283827C5D438044AA5C2 /* ItemGuardrails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemGuardrails.swift; sourceTree = "<group>"; };
+		A6E1814ED15633F4BFD589B2 /* SafetyScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafetyScreen.swift; sourceTree = "<group>"; };
+		A1274BC885D12F304EF43276 /* Haptics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Haptics.swift; sourceTree = "<group>"; };
+		E9F9225261D33D353B59BFC3 /* LanguageReasoner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageReasoner.swift; sourceTree = "<group>"; };
+		4BE30929DAC7DB2524DE9C4A /* AnswerChecker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerChecker.swift; sourceTree = "<group>"; };
+		D8E05296D26606F0BABF69FD /* MasteryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasteryModel.swift; sourceTree = "<group>"; };
+		C2FEC2E765BB07449A9F8E14 /* MathEvaluator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MathEvaluator.swift; sourceTree = "<group>"; };
+		7C88F78D0D6B49A5921175C4 /* ProgressEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressEngine.swift; sourceTree = "<group>"; };
+		ACCC030BF3C698AFE08AEA1D /* SeededRandom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeededRandom.swift; sourceTree = "<group>"; };
+		2AE5D433CF63797822ECEAB8 /* SessionBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionBuilder.swift; sourceTree = "<group>"; };
+		1B113AD97A285F49B28434DE /* SpacedRepetition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpacedRepetition.swift; sourceTree = "<group>"; };
+		ACDB2177FDB2342139CA5076 /* ProgressStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressStore.swift; sourceTree = "<group>"; };
+		098525B2C8EEFCC2DA3E5E44 /* QuarkTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuarkTheme.swift; sourceTree = "<group>"; };
+		E5DFEE45683401E29F2E034C /* SessionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionViewModel.swift; sourceTree = "<group>"; };
+		6EDD3B866C0C25DFD7EC21E2 /* AnswerControls.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerControls.swift; sourceTree = "<group>"; };
+		FE580C47A4ED80390A20F17A /* CoachSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoachSheet.swift; sourceTree = "<group>"; };
+		09CA6D11ACD011F01071073C /* Effects.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Effects.swift; sourceTree = "<group>"; };
+		B9D631C1D0D23377E558861B /* FeedbackBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackBar.swift; sourceTree = "<group>"; };
+		D678BBA5054031DDE0E38A75 /* LessonNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonNode.swift; sourceTree = "<group>"; };
+		F4CA3724E076BA9B735C53DE /* QuarkControls.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuarkControls.swift; sourceTree = "<group>"; };
+		EC9FBED8FC0195D1076F4A3D /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
+		2005BABF14E9BE5D4FB8A2D5 /* PathView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PathView.swift; sourceTree = "<group>"; };
+		2CA2C1EB9ACEA13A6B5A34B0 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		BB6F9E5467B5F8E388A6BCA0 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
+		B9BAF45C3F7DBD2D7D6C25A7 /* SessionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionView.swift; sourceTree = "<group>"; };
+		47EC072FE4C89C7FA41997F9 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		D7FCD16BFAD1215F8DB34A70 /* SummaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryView.swift; sourceTree = "<group>"; };
+		24D66C2E4EAFB44A5315E98C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F5BF48AA40CAD7891EB709FC /* Quark - Learn STEM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Quark - Learn STEM.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		1588BA9D59F077E2771DFFE4 /* Curriculum */ = {
+			isa = PBXGroup;
+			children = (
+				F0C638FDE40C49F7C1BA9F98 /* BiologyCourse.swift */,
+				33B4C4D7966945848947C5A5 /* ChemistryCourse.swift */,
+				0EA302FB0883AA108C217BC5 /* ComputingCourse.swift */,
+				5B3EC5991BB8F7CC38F2E30C /* Curriculum.swift */,
+				298ECA82B8AE9BAE6229DC8C /* DataCourse.swift */,
+				4C4F252395216E9F4A064F7B /* MathCourse.swift */,
+				B03D1CA094123F32C187D2D6 /* PhysicsCourse.swift */,
+			);
+			path = Curriculum;
+			sourceTree = "<group>";
+		};
+		99E8D35BD6DBED1AD3C6AA8B /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				57E388D536B2BEA64FAE63C0 /* Course.swift */,
+				87C4CA8D38AA40E67B070AF7 /* Exercise.swift */,
+				73EAB5AEFB074609CD7D3C41 /* LearnerProfile.swift */,
+				117C60DA697C06D187FD2D7D /* Track.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		D21AC870AB8D34E820D09F5C /* Coach */ = {
+			isa = PBXGroup;
+			children = (
+				FB17DD257E5334ECA9DBC90D /* CoachService.swift */,
+				EEADCF6E52405FEB2F4DD232 /* Constitution.swift */,
+				9D25A512F686EDF1C8C37C19 /* PracticeGenerator.swift */,
+				FC9AA647B138B2975EBC0B87 /* QuarkPersona.swift */,
+			);
+			path = Coach;
+			sourceTree = "<group>";
+		};
+		6C9E67DCBEFAE6CA24F5516D /* Guardrails */ = {
+			isa = PBXGroup;
+			children = (
+				2F3B8797F625235DA5C9FF90 /* AnswerLeakDetector.swift */,
+				DDCF810CD28434FEA893DD6A /* CoachGuardrails.swift */,
+				7112385111C0BE7BE4C70D5A /* GroundingCheck.swift */,
+				417FF51EE3E98FFA47CD2051 /* Guardrail.swift */,
+				0C9D283827C5D438044AA5C2 /* ItemGuardrails.swift */,
+				A6E1814ED15633F4BFD589B2 /* SafetyScreen.swift */,
+			);
+			path = Guardrails;
+			sourceTree = "<group>";
+		};
+		98D706D5D77979F59C73E856 /* Intelligence */ = {
+			isa = PBXGroup;
+			children = (
+				E9F9225261D33D353B59BFC3 /* LanguageReasoner.swift */,
+			);
+			path = Intelligence;
+			sourceTree = "<group>";
+		};
+		BDB7E14B5A448694F1A05246 /* Learning */ = {
+			isa = PBXGroup;
+			children = (
+				4BE30929DAC7DB2524DE9C4A /* AnswerChecker.swift */,
+				D8E05296D26606F0BABF69FD /* MasteryModel.swift */,
+				C2FEC2E765BB07449A9F8E14 /* MathEvaluator.swift */,
+				7C88F78D0D6B49A5921175C4 /* ProgressEngine.swift */,
+				ACCC030BF3C698AFE08AEA1D /* SeededRandom.swift */,
+				2AE5D433CF63797822ECEAB8 /* SessionBuilder.swift */,
+				1B113AD97A285F49B28434DE /* SpacedRepetition.swift */,
+			);
+			path = Learning;
+			sourceTree = "<group>";
+		};
+		FD0CB47DFB36BDCDA5DCE1DB /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				D21AC870AB8D34E820D09F5C /* Coach */,
+				6C9E67DCBEFAE6CA24F5516D /* Guardrails */,
+				98D706D5D77979F59C73E856 /* Intelligence */,
+				BDB7E14B5A448694F1A05246 /* Learning */,
+				DA4988768BA8C405C2B16BFD /* AppSettings.swift */,
+				A1274BC885D12F304EF43276 /* Haptics.swift */,
+				ACDB2177FDB2342139CA5076 /* ProgressStore.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		34D70FC1D29DC7ECDE74E0BA /* Theme */ = {
+			isa = PBXGroup;
+			children = (
+				098525B2C8EEFCC2DA3E5E44 /* QuarkTheme.swift */,
+			);
+			path = Theme;
+			sourceTree = "<group>";
+		};
+		1BF7AFFF9FA8C21CC45664D1 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				E5DFEE45683401E29F2E034C /* SessionViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		044AB9D74F8253D05F50402A /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				6EDD3B866C0C25DFD7EC21E2 /* AnswerControls.swift */,
+				FE580C47A4ED80390A20F17A /* CoachSheet.swift */,
+				09CA6D11ACD011F01071073C /* Effects.swift */,
+				B9D631C1D0D23377E558861B /* FeedbackBar.swift */,
+				D678BBA5054031DDE0E38A75 /* LessonNode.swift */,
+				F4CA3724E076BA9B735C53DE /* QuarkControls.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		453691B47BC8D722ABF2D385 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				044AB9D74F8253D05F50402A /* Components */,
+				EC9FBED8FC0195D1076F4A3D /* OnboardingView.swift */,
+				2005BABF14E9BE5D4FB8A2D5 /* PathView.swift */,
+				2CA2C1EB9ACEA13A6B5A34B0 /* ProfileView.swift */,
+				BB6F9E5467B5F8E388A6BCA0 /* RootView.swift */,
+				B9BAF45C3F7DBD2D7D6C25A7 /* SessionView.swift */,
+				47EC072FE4C89C7FA41997F9 /* SettingsView.swift */,
+				D7FCD16BFAD1215F8DB34A70 /* SummaryView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		C8B49AA8609793E2E82A5028 /* Quark */ = {
+			isa = PBXGroup;
+			children = (
+				1588BA9D59F077E2771DFFE4 /* Curriculum */,
+				99E8D35BD6DBED1AD3C6AA8B /* Models */,
+				FD0CB47DFB36BDCDA5DCE1DB /* Services */,
+				34D70FC1D29DC7ECDE74E0BA /* Theme */,
+				1BF7AFFF9FA8C21CC45664D1 /* ViewModels */,
+				453691B47BC8D722ABF2D385 /* Views */,
+				24D66C2E4EAFB44A5315E98C /* Assets.xcassets */,
+				4D126EF71F0B59398CCFCE45 /* QuarkApp.swift */,
+			);
+			path = Quark;
+			sourceTree = "<group>";
+		};
+		5DCD066AE8F41879044B82F4 = {
+			isa = PBXGroup;
+			children = (
+				C8B49AA8609793E2E82A5028 /* Quark */,
+				433D647A17039DC680DEAE8F /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		433D647A17039DC680DEAE8F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F5BF48AA40CAD7891EB709FC /* Quark - Learn STEM.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		42AEFBAE01D2DFD981F7DA7D /* Quark */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 88A9556C78F4D881C352E222 /* Build configuration list for PBXNativeTarget "Quark" */;
+			buildPhases = (
+				F3F3D267CF0FD5307403D537 /* Sources */,
+				41B260B1D2A5E0B273280C8E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Quark;
+			productName = Quark;
+			productReference = F5BF48AA40CAD7891EB709FC /* Quark - Learn STEM.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		46F86FAA6BBF9AC94A7E4595 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1600;
+			};
+			buildConfigurationList = 887D4B5F61EA6AAAF609F3AC /* Build configuration list for PBXProject "Quark" */;
+			compatibilityVersion = "Xcode 15.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = 5DCD066AE8F41879044B82F4;
+			productRefGroup = 433D647A17039DC680DEAE8F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				42AEFBAE01D2DFD981F7DA7D /* Quark */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		41B260B1D2A5E0B273280C8E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D3B2F64B06C1554C6A6956AF /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F3F3D267CF0FD5307403D537 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F026BAA99ABD40D05BF4EB05 /* BiologyCourse.swift in Sources */,
+				93E19466EF0D8F3FC6D1245B /* ChemistryCourse.swift in Sources */,
+				E7767863FFA2ED7F66AE42B4 /* ComputingCourse.swift in Sources */,
+				141A3FB2A2FE3B06EAB9F421 /* Curriculum.swift in Sources */,
+				5916B2B7AD8E7136E0BDA597 /* DataCourse.swift in Sources */,
+				051A7A8392BD387EFB18E690 /* MathCourse.swift in Sources */,
+				42D71C3DF0414B1470C2541B /* PhysicsCourse.swift in Sources */,
+				034A55AA0C5045B3447CB95A /* Course.swift in Sources */,
+				7671E392A2CB46A57405E0D7 /* Exercise.swift in Sources */,
+				A844E052DDE6427F2EAFD18A /* LearnerProfile.swift in Sources */,
+				D77DBCB77A62FF369C0F7255 /* Track.swift in Sources */,
+				EC9BF9184673F45C33DA2C53 /* QuarkApp.swift in Sources */,
+				84CDE48EB943F87DC4837D31 /* AppSettings.swift in Sources */,
+				5022C3989962C7CC45F0B65E /* CoachService.swift in Sources */,
+				FE73DCF39459A5DD7DF9740E /* Constitution.swift in Sources */,
+				8FFED5CF0FCC9FAD4CC92D8B /* PracticeGenerator.swift in Sources */,
+				9CF65D26782966BB3C4DF581 /* QuarkPersona.swift in Sources */,
+				4D152F6B925D48CDB030A322 /* AnswerLeakDetector.swift in Sources */,
+				4A937517FE081897A66BAFFA /* CoachGuardrails.swift in Sources */,
+				6ECAA42705AF0DBF950DA323 /* GroundingCheck.swift in Sources */,
+				3CAD1E262B52A2AB380A1C67 /* Guardrail.swift in Sources */,
+				48B245FB275C87FA21D76EC4 /* ItemGuardrails.swift in Sources */,
+				55BC84EBCC3617D2EE6D7DCC /* SafetyScreen.swift in Sources */,
+				DD65F5FCA6835ECC1C71DF97 /* Haptics.swift in Sources */,
+				AAB1541AA273EFB287B11931 /* LanguageReasoner.swift in Sources */,
+				CC813A0F085FC30A958E9860 /* AnswerChecker.swift in Sources */,
+				6152CF57181BC7938E89F702 /* MasteryModel.swift in Sources */,
+				60532A19E295164646B0853B /* MathEvaluator.swift in Sources */,
+				312C668FA858C846A5134C17 /* ProgressEngine.swift in Sources */,
+				B40EBA2A9200DC2274D6F0F4 /* SeededRandom.swift in Sources */,
+				2C7B39A14E5C2BD1F901A332 /* SessionBuilder.swift in Sources */,
+				38B6F66217311C92841F2105 /* SpacedRepetition.swift in Sources */,
+				8BD5AC75A303DF32ABF05336 /* ProgressStore.swift in Sources */,
+				8861829D461FE84463F405D9 /* QuarkTheme.swift in Sources */,
+				EE56FD3907CB84D67DD93D77 /* SessionViewModel.swift in Sources */,
+				BF6661AC540AD827B9233B03 /* AnswerControls.swift in Sources */,
+				AA4156D976DD856B9B8E11F4 /* CoachSheet.swift in Sources */,
+				27BFD9EFA25DE96820B2E2F5 /* Effects.swift in Sources */,
+				92AEA21EB3172C2F8AD3AFAC /* FeedbackBar.swift in Sources */,
+				CA02620F45EE39CFD20B03BF /* LessonNode.swift in Sources */,
+				852692D4352BD3C465991192 /* QuarkControls.swift in Sources */,
+				F954E89269E7375669033D4A /* OnboardingView.swift in Sources */,
+				D9966DF70355375CCD528328 /* PathView.swift in Sources */,
+				DB615F9D866C1E21D51D6DBD /* ProfileView.swift in Sources */,
+				FCDE762B2FA709BDE5DD7B78 /* RootView.swift in Sources */,
+				C5A9E8461A4FA85EC4947E12 /* SessionView.swift in Sources */,
+				C0DBC712473C98BC6AFF0F85 /* SettingsView.swift in Sources */,
+				E9A310BC2F46E59EC71FE1EC /* SummaryView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		A1FEF218C4C57CE118AD5A8A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("$(inherited)", "DEBUG=1");
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		D49EF4AC7029FD1A8C1140E0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		FEE7AE1A1C8291DDE6965C1D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "Quark - Learn STEM";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait";
+				LD_RUNPATH_SEARCH_PATHS = ("$(inherited)", "@executable_path/Frameworks");
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.camoulabs.Quark;
+				PRODUCT_NAME = "Quark - Learn STEM";
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		71B50D198E64EEE00C2C0E9C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "Quark - Learn STEM";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait";
+				LD_RUNPATH_SEARCH_PATHS = ("$(inherited)", "@executable_path/Frameworks");
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.camoulabs.Quark;
+				PRODUCT_NAME = "Quark - Learn STEM";
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		887D4B5F61EA6AAAF609F3AC /* Build configuration list for PBXProject "Quark" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A1FEF218C4C57CE118AD5A8A /* Debug */,
+				D49EF4AC7029FD1A8C1140E0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		88A9556C78F4D881C352E222 /* Build configuration list for PBXNativeTarget "Quark" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FEE7AE1A1C8291DDE6965C1D /* Debug */,
+				71B50D198E64EEE00C2C0E9C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 46F86FAA6BBF9AC94A7E4595 /* Project object */;
+}
