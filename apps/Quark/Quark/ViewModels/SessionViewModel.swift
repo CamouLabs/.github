@@ -119,6 +119,12 @@ final class SessionViewModel: ObservableObject {
 
     var sparksAreLimited: Bool { sparks != Int.max }
 
+    /// True once the answer has been graded, which is what locks the controls.
+    var isShowingFeedback: Bool {
+        if case .feedback = phase { return true }
+        return false
+    }
+
     var facts: [String] {
         guard let current, let lesson = Curriculum.lesson(id: current.lessonID) else { return plan.facts }
         return lesson.facts

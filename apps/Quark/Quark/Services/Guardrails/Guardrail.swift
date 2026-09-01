@@ -141,11 +141,20 @@ struct GuardrailLedger: Sendable, Equatable {
         blockedBySystemGuardrail += 1
     }
 
-    var topRejections: [(guardrail: GuardrailID, count: Int)] {
+    var topRejections: [GuardrailTally] {
         rejectionsByGuardrail
             .compactMap { key, count in
-                GuardrailID(rawValue: key).map { (guardrail: $0, count: count) }
+                GuardrailID(rawValue: key).map { GuardrailTally(guardrail: $0, count: count) }
             }
             .sorted { $0.count > $1.count }
     }
+}
+
+/// One guardrail and how often it fired. A named type rather than a tuple
+/// because the summary screen enumerates these, and `ForEach` needs identity.
+struct GuardrailTally: Sendable, Equatable, Identifiable {
+    let guardrail: GuardrailID
+    let count: Int
+
+    var id: String { guardrail.rawValue }
 }
