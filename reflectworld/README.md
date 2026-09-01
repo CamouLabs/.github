@@ -1,74 +1,69 @@
 # ReflectWorld
 
-A daily journaling application that builds a compassionate world model of your inner life. Voice and video notes become condensed, graph-structured memory that agents reason over to offer empathic reflection and timely insights.
+A native **iPhone app** for daily journaling that builds a compassionate world model of your inner life. Voice and video notes are transcribed on-device, condensed into a graph-structured memory, and reflected back as gentle insights over time.
 
-## Features
+## iPhone App (primary)
 
-- **Apple Notes-inspired UI** — clean sidebar, minimal editor, soft aesthetics
-- **Voice & video journaling** — record voice notes or upload audio/video; local Whisper transcription
-- **Memory graph** — perceptual and reflective memory tiers with semantic connections
-- **Empathic insights** — gentle reminders, pattern recognition, encouragement, reflection questions
-- **Research-backed pipeline** — Extract → Condense → Reflect (GCAgent, ∞-Video, MemGPT-inspired)
+SwiftUI native app with Apple Notes-inspired UI.
+
+```bash
+open reflectworld/ios/ReflectWorld.xcodeproj
+```
+
+Requires Xcode 15+, iOS 17+, and an iPhone or Simulator. See [ios/README.md](ios/README.md).
+
+### On-device features
+
+- Grouped entry list and editor (Apple Notes style)
+- Voice notes via microphone + on-device Speech transcription
+- Video notes via photo library import + audio extraction
+- Memory graph with perceptual and reflective tiers
+- Empathic insights (reminders, patterns, encouragement, reflection questions)
+- Extract → Condense → Reflect pipeline (GCAgent / ∞-Video inspired)
+- All data stored locally with SwiftData
+
+### Permissions
+
+Microphone, Speech Recognition, and Photo Library (for video import).
+
+## Optional Python Backend
+
+The FastAPI backend (`backend/`) provides Whisper transcription and optional LLM-enhanced insights when you run a companion server. The iPhone app works fully without it.
+
+```bash
+cd backend && pip install -r requirements.txt
+uvicorn main:app --reload --port 8000
+```
+
+Set `OPENAI_API_KEY` in `backend/.env` for LLM enhancement.
 
 ## Architecture
 
-See [PLAN.md](PLAN.md) for the full architecture plan with research citations and critique log.
+See [PLAN.md](PLAN.md) for research foundations and critique log.
 
 ```
-Frontend (Next.js)  ←→  Backend (FastAPI)
-                            ├── Whisper transcription
-                            ├── Memory graph (NetworkX)
-                            ├── Embeddings (sentence-transformers)
-                            └── Processing pipeline (optional LiteLLM)
+iPhone (SwiftUI + SwiftData)
+  ├── Speech / AVFoundation (voice & video)
+  ├── Memory graph (on-device)
+  └── Processing pipeline
+
+Optional: FastAPI backend for Whisper + LiteLLM
 ```
-
-## Quick Start
-
-```bash
-chmod +x scripts/start.sh
-./scripts/start.sh
-```
-
-Or manually:
-
-```bash
-# Backend
-cd backend
-python3 -m venv .venv
-source .venv/bin/activate
-pip install -r requirements.txt
-uvicorn main:app --reload --port 8000
-
-# Frontend
-cd frontend
-npm install
-npm run dev
-```
-
-Open http://localhost:3000
-
-## Optional: LLM Enhancement
-
-Set `OPENAI_API_KEY` in `backend/.env` for AI-enhanced entity extraction, condensation, and insights:
-
-```bash
-echo "OPENAI_API_KEY=sk-..." > backend/.env
-```
-
-Without an API key, the app works fully with rule-based extraction and empathic templates.
 
 ## Research Foundations
 
 | Source | Application |
 |--------|-------------|
-| ∞-Video (ICML 2025) | Sticky memory salience consolidation |
-| GCAgent | Extract → Condense → Reflect pipeline |
+| ∞-Video (ICML 2025) | Sticky memory salience |
+| GCAgent | Extract → Condense → Reflect |
 | VideoARM | Hierarchical memory tiers |
-| LVAgent | Multi-stage agent orchestration |
-| MemGPT (Stanford CS329A) | Tiered memory architecture |
-| Generative Agents | Observation → Reflection synthesis |
-| Compass Compound AI | Local vs LLM config switching |
+| MemGPT (Stanford CS329A) | Tiered memory |
+| Compass Compound AI | On-device vs server paths |
 
 ## Privacy
 
-All data stored locally (SQLite + filesystem). No cloud sync. LLM calls optional.
+All journal data stays on your iPhone. No cloud sync by default. Optional backend is user-controlled.
+
+## Web prototype
+
+A Next.js web prototype exists in `frontend/` for development reference; the shipped product is the native iOS app.

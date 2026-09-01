@@ -1,0 +1,318 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		B10000010000000000000001 /* ReflectWorldApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10000010000000000000001 /* ReflectWorldApp.swift */; };
+		B10000010000000000000002 /* JournalModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10000010000000000000002 /* JournalModels.swift */; };
+		B10000010000000000000003 /* SpeechTranscriptionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10000010000000000000003 /* SpeechTranscriptionService.swift */; };
+		B10000010000000000000004 /* AudioRecorderService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10000010000000000000004 /* AudioRecorderService.swift */; };
+		B10000010000000000000005 /* MemoryGraphService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10000010000000000000005 /* MemoryGraphService.swift */; };
+		B10000010000000000000006 /* ProcessingPipeline.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10000010000000000000006 /* ProcessingPipeline.swift */; };
+		B10000010000000000000007 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10000010000000000000007 /* APIClient.swift */; };
+		B10000010000000000000008 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10000010000000000000008 /* ContentView.swift */; };
+		B10000010000000000000009 /* EntryListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10000010000000000000009 /* EntryListView.swift */; };
+		B10000010000000000000010 /* EntryEditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10000010000000000000010 /* EntryEditorView.swift */; };
+		B10000010000000000000011 /* InsightsSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10000010000000000000011 /* InsightsSheet.swift */; };
+		B10000010000000000000012 /* MemoryGraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10000010000000000000012 /* MemoryGraphView.swift */; };
+		B10000010000000000000013 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F10000010000000000000013 /* Assets.xcassets */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		F10000010000000000000001 /* ReflectWorldApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReflectWorldApp.swift; sourceTree = "<group>"; };
+		F10000010000000000000002 /* JournalModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalModels.swift; sourceTree = "<group>"; };
+		F10000010000000000000003 /* SpeechTranscriptionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechTranscriptionService.swift; sourceTree = "<group>"; };
+		F10000010000000000000004 /* AudioRecorderService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioRecorderService.swift; sourceTree = "<group>"; };
+		F10000010000000000000005 /* MemoryGraphService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryGraphService.swift; sourceTree = "<group>"; };
+		F10000010000000000000006 /* ProcessingPipeline.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProcessingPipeline.swift; sourceTree = "<group>"; };
+		F10000010000000000000007 /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
+		F10000010000000000000008 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		F10000010000000000000009 /* EntryListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryListView.swift; sourceTree = "<group>"; };
+		F10000010000000000000010 /* EntryEditorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryEditorView.swift; sourceTree = "<group>"; };
+		F10000010000000000000011 /* InsightsSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsightsSheet.swift; sourceTree = "<group>"; };
+		F10000010000000000000012 /* MemoryGraphView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryGraphView.swift; sourceTree = "<group>"; };
+		F10000010000000000000013 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F10000010000000000000014 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F10000010000000000000015 /* ReflectWorld.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ReflectWorld.app; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C10000010000000000000001 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		G10000010000000000000001 = {
+			isa = PBXGroup;
+			children = (
+				G10000010000000000000002 /* ReflectWorld */,
+				G10000010000000000000003 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		G10000010000000000000002 /* ReflectWorld */ = {
+			isa = PBXGroup;
+			children = (
+				F10000010000000000000001 /* ReflectWorldApp.swift */,
+				G10000010000000000000004 /* Models */,
+				G10000010000000000000005 /* Services */,
+				G10000010000000000000006 /* Views */,
+				F10000010000000000000013 /* Assets.xcassets */,
+				F10000010000000000000014 /* Info.plist */,
+			);
+			path = ReflectWorld;
+			sourceTree = "<group>";
+		};
+		G10000010000000000000003 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F10000010000000000000015 /* ReflectWorld.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		G10000010000000000000004 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				F10000010000000000000002 /* JournalModels.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		G10000010000000000000005 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				F10000010000000000000003 /* SpeechTranscriptionService.swift */,
+				F10000010000000000000004 /* AudioRecorderService.swift */,
+				F10000010000000000000005 /* MemoryGraphService.swift */,
+				F10000010000000000000006 /* ProcessingPipeline.swift */,
+				F10000010000000000000007 /* APIClient.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		G10000010000000000000006 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				F10000010000000000000008 /* ContentView.swift */,
+				F10000010000000000000009 /* EntryListView.swift */,
+				F10000010000000000000010 /* EntryEditorView.swift */,
+				F10000010000000000000011 /* InsightsSheet.swift */,
+				F10000010000000000000012 /* MemoryGraphView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		T10000010000000000000001 /* ReflectWorld */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = L10000010000000000000002 /* Build configuration list for PBXNativeTarget "ReflectWorld" */;
+			buildPhases = (
+				S10000010000000000000001 /* Sources */,
+				C10000010000000000000001 /* Frameworks */,
+				R10000010000000000000001 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ReflectWorld;
+			productName = ReflectWorld;
+			productReference = F10000010000000000000015 /* ReflectWorld.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		P10000010000000000000001 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1500;
+				LastUpgradeCheck = 1500;
+				TargetAttributes = {
+					T10000010000000000000001 = {
+						CreatedOnToolsVersion = 15.0;
+					};
+				};
+			};
+			buildConfigurationList = L10000010000000000000001 /* Build configuration list for PBXProject "ReflectWorld" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = G10000010000000000000001;
+			productRefGroup = G10000010000000000000003 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				T10000010000000000000001 /* ReflectWorld */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		R10000010000000000000001 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B10000010000000000000013 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		S10000010000000000000001 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B10000010000000000000001 /* ReflectWorldApp.swift in Sources */,
+				B10000010000000000000002 /* JournalModels.swift in Sources */,
+				B10000010000000000000003 /* SpeechTranscriptionService.swift in Sources */,
+				B10000010000000000000004 /* AudioRecorderService.swift in Sources */,
+				B10000010000000000000005 /* MemoryGraphService.swift in Sources */,
+				B10000010000000000000006 /* ProcessingPipeline.swift in Sources */,
+				B10000010000000000000007 /* APIClient.swift in Sources */,
+				B10000010000000000000008 /* ContentView.swift in Sources */,
+				B10000010000000000000009 /* EntryListView.swift in Sources */,
+				B10000010000000000000010 /* EntryEditorView.swift in Sources */,
+				B10000010000000000000011 /* InsightsSheet.swift in Sources */,
+				B10000010000000000000012 /* MemoryGraphView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		X10000010000000000000001 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		X10000010000000000000002 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		X10000010000000000000003 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = ReflectWorld/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.reflectworld.app;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		X10000010000000000000004 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = ReflectWorld/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.reflectworld.app;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		L10000010000000000000001 /* Build configuration list for PBXProject "ReflectWorld" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				X10000010000000000000001 /* Debug */,
+				X10000010000000000000002 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		L10000010000000000000002 /* Build configuration list for PBXNativeTarget "ReflectWorld" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				X10000010000000000000003 /* Debug */,
+				X10000010000000000000004 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = P10000010000000000000001 /* Project object */;
+}

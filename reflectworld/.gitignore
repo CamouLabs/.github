@@ -17,6 +17,12 @@ backend/.env
 .DS_Store
 *.log
 
+# Xcode
+ios/**/xcuserdata/
+ios/**/*.xcworkspace/xcuserdata/
+DerivedData/
+*.xcuserstate
+
 # IDE
 .idea/
 .vscode/

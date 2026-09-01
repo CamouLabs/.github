@@ -51,12 +51,14 @@
 - MediaRecorder for video is complex (browser codec issues)
 - Chat interface is a separate feature that dilutes journaling focus
 - Mood picker needs predefined options, not freeform
+- **v3: Product is iPhone app, not web**
 
 **Fixes applied:**
-- Responsive: sidebar collapses on mobile; insights panel as bottom sheet
-- Voice recording primary; video as file upload (not live recording)
-- Chat deferred to v2; focus on insights panel for MVP
-- Mood picker: 8 predefined moods with emoji icons
+- Native SwiftUI iPhone app with NavigationStack list → detail (Apple Notes on iPhone)
+- Voice recording via AVAudioRecorder; video via PhotosPicker
+- Insights and memory graph as bottom sheets
+- Mood picker: 8 predefined moods with emoji
+- Web frontend demoted to prototype; iOS is primary deliverable
 
 ### Critique 5: Data & Privacy
 **Issues found:**
@@ -134,14 +136,12 @@ Frontend (Next.js)          Backend (FastAPI)
 
 | Component | Choice |
 |---|---|
-| Frontend | Next.js 14, Tailwind, TypeScript |
-| Backend | FastAPI, Python 3.12 |
-| DB | SQLite via aiosqlite |
-| Graph | NetworkX (in-memory, persisted as JSON) |
-| Transcription | faster-whisper (base model) |
-| Embeddings | sentence-transformers/all-MiniLM-L6-v2 |
-| LLM | LiteLLM (optional, env OPENAI_API_KEY) |
-| Media | ffmpeg for video→audio |
+| **iOS App** | SwiftUI, SwiftData, iOS 17+ |
+| Transcription | Speech framework (on-device) |
+| Voice/Video | AVFoundation, PhotosPicker |
+| Memory graph | SwiftData + keyword similarity |
+| Optional server | FastAPI, Whisper, LiteLLM |
+| Web prototype | Next.js 14 (reference only) |
 
 ---
 
