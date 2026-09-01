@@ -701,6 +701,7 @@
     .nav-inner { min-height: 52px; gap: 0.65rem; }
     .brand { font-size: 0.95rem; }
     .brand img { width: 22px; height: 22px; }
+    .nav-actions { flex-wrap: nowrap; }
     .nav-btn { min-height: 28px; font-size: 0.7rem; padding: 0.28rem 0.65rem; white-space: nowrap; }
     .hero, .section, .product {
       min-height: auto;
@@ -733,6 +734,11 @@
     .reveal.from-left, .reveal.from-right { transform: translateY(18px); }
   }
 
+  /* The dropped links stay reachable from the hero buttons and the footer. */
+  @media (max-width: 620px) {
+    .nav-hide-sm { display: none; }
+  }
+
   @media (max-width: 420px) {
     .hero-actions { flex-direction: column; align-items: stretch; }
     .hero-actions .btn { width: 100%; }
@@ -748,9 +754,9 @@
         <span>Quark</span>
       </a>
       <div class="nav-actions">
-        <a class="nav-btn nav-btn-secondary" href="#loop">How it works</a>
+        <a class="nav-btn nav-btn-secondary nav-hide-sm" href="#loop">How it works</a>
         <a class="nav-btn nav-btn-secondary" href="#guardrails">Guardrails</a>
-        <a class="nav-btn nav-btn-secondary" href="#privacy">Privacy</a>
+        <a class="nav-btn nav-btn-secondary nav-hide-sm" href="#privacy">Privacy</a>
         <a class="nav-btn nav-btn-primary" href="https://github.com/CamouLabs/.github/tree/main/apps/Quark">Source</a>
       </div>
     </div>
