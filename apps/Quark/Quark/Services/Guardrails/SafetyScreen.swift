@@ -152,7 +152,12 @@ enum SafetyScreen {
         for pattern in [emailPattern, urlPattern, phonePattern] {
             cleaned = replacing(pattern, in: cleaned, with: "")
         }
-        cleaned = cleaned
+        // Removing a link usually strands its lead-in ("More at"), so drop any
+        // sentence that no longer carries a thought.
+        let sentences = Sentences.split(cleaned).filter { sentence in
+            sentence.split(whereSeparator: { $0 == " " }).count >= 3
+        }
+        cleaned = Sentences.join(sentences)
             .replacingOccurrences(of: "  ", with: " ")
             .trimmingCharacters(in: .whitespacesAndNewlines)
         return (cleaned, findings)

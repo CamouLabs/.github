@@ -16,17 +16,26 @@
 import Foundation
 
 enum Sentences {
-    /// Splits on sentence-ending punctuation, keeping the terminator.
+    /// Splits on sentence-ending punctuation, keeping the terminator. A full
+    /// stop between digits is a decimal point, not the end of a sentence —
+    /// getting this wrong would let "0.875" survive a leak filter as "0."
     static func split(_ text: String) -> [String] {
         var sentences: [String] = []
         var current = ""
-        for character in text {
+        let characters = Array(text)
+
+        for (index, character) in characters.enumerated() {
             current.append(character)
-            if character == "." || character == "!" || character == "?" || character == "\n" {
-                let trimmed = current.trimmingCharacters(in: .whitespacesAndNewlines)
-                if !trimmed.isEmpty { sentences.append(trimmed) }
-                current = ""
+            guard character == "." || character == "!" || character == "?" || character == "\n" else { continue }
+
+            if character == "." {
+                let previous = index > 0 ? characters[index - 1] : " "
+                let next = index + 1 < characters.count ? characters[index + 1] : " "
+                if previous.isNumber, next.isNumber { continue }
             }
+            let trimmed = current.trimmingCharacters(in: .whitespacesAndNewlines)
+            if !trimmed.isEmpty { sentences.append(trimmed) }
+            current = ""
         }
         let trimmed = current.trimmingCharacters(in: .whitespacesAndNewlines)
         if !trimmed.isEmpty { sentences.append(trimmed) }
