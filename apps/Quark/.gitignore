@@ -1,0 +1,10 @@
+# Xcode user state
+**/xcuserdata/
+*.xcuserstate
+
+# Tooling build outputs
+.tooling/*.bin
+.tooling/*.log
+
+# macOS
+.DS_Store
