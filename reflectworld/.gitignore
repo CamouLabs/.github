@@ -1,0 +1,28 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+*.egg-info/
+
+# Node
+node_modules/
+.next/
+out/
+
+# Data (local user data)
+data/
+backend/.env
+
+# OS
+.DS_Store
+*.log
+
+# Xcode
+ios/**/xcuserdata/
+ios/**/*.xcworkspace/xcuserdata/
+DerivedData/
+*.xcuserstate
+
+# IDE
+.idea/
+.vscode/
